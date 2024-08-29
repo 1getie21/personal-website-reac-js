@@ -1,0 +1,17 @@
+.portfolio-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.portfolio-list li {
+    margin-bottom: 20px;
+}
+
+.portfolio-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.portfolio-list a:hover {
+    text-decoration: underline;
+}
