@@ -1,5 +1,5 @@
 import React from 'react';
-import './MyPortfolio.css'; // Assuming you created a separate CSS file for Portfolio
+import './MyPortfolio.css';
 
 const portfolioStyle = {
     padding: '20px',
@@ -7,34 +7,46 @@ const portfolioStyle = {
 };
 const projectList = [
     {
-        title: "Project One",
+        title: "java-spring-boot-backend",
         description: "A brief description of Project One.",
-        link: "https://github.com/1getie21/project-one"
+        link: "https://github.com/1getie21/java-spring-boot-backend"
+    },
+
+    {
+        title: "Personal Website Screenshot",
+        description: " screenshot of my personal website. This provides a glimpse of my web design and development skills.",
+        link: "/assets/screenshots/website-screenshot.png",
+        type: "image"
     },
     {
-        title: "Project Two",
-        description: "A brief description of Project Two.",
-        link: "https://github.com/1getie21/project-two"
-    },
-    ];
+        title: "My CV",
+        description: "Download my CV for a detailed overview of my professional background and qualifications.",
+        link: "/assets/documents/cv.pdf",
+        type: "document" // Specify that this is a document
+    }
+];
 
 function MyPortfolio() {
     return (
         <section style={portfolioStyle}>
             <h2>Portfolio</h2>
             <p>Here you can showcase some of the projects I've worked on.</p>
-            {/* You might want to add a list or grid of projects here */}
             <ul className="portfolio-list">
                 {projectList.map((project, index) => (
                     <li key={index}>
                         <h3>{project.title}</h3>
                         <p>{project.description}</p>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
+                        {project.type === "image" ? (
+                            <img src={project.link} alt={project.title} style={{ width: '100%', maxWidth: '600px' }} />
+                        ) : project.type === "document" ? (
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">Download CV</a>
+                        ) : (
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
+                        )}
                     </li>
                 ))}
             </ul>
         </section>
     );
 }
-
 export default MyPortfolio;

@@ -11,9 +11,10 @@ function AboutMe() {
         <section style={aboutMeStyle}>
             <p>Welcome to Getie Bantimen Damtew's personal website!</p>
             <p>
-                I’m a passionate Software Engineer with a focus on [full-stack development using modern technologies such as React, Node.js, spring boot,
-                and Cyber-security identifying vulnerabilities to protect against threats, utilizing tools like OWASP and various encryption techniques ].
-                Here, you'll find details about my projects,skills, and how to connect with me.
+                I’m a passionate Software Engineer specializing in full-stack development with expertise in modern technologies such as
+                React, Node.js, and Spring Boot. My work in Cybersecurity focuses on identifying and mitigating vulnerabilities to protect against potential
+                threats. I leverage tools like OWASP and advanced encryption techniques to ensure robust security solutions. Here, you'll find detailed information
+                about my projects, skills, and ways to connect with me.
 
             </p>
         </section>

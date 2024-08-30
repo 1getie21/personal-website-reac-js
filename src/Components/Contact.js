@@ -11,6 +11,7 @@ function Contact() {
         <section style={contactStyle}>
             <h2>Contact Me</h2>
             <p>Feel free to reach out to me via email at <a href="mailto:kaffet2010@gmail.com">kaffet2010@gmail.com</a>.</p>
+            <p>You can also connect with me on <a href="https://github.com/1getie21">GitHub</a>.</p>
         </section>
     );
 }

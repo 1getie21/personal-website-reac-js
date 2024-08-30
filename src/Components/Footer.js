@@ -10,6 +10,7 @@ function Footer() {
     return (
         <footer style={footerStyle}>
             <p>&copy; 2024 Getie Bantimen Damtew. All rights reserved.</p>
+            <p>Connect with me on <a href="https://github.com/1getie21">GitHub</a>.</p>
         </footer>
     );
 }
