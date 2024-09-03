@@ -1,5 +1,6 @@
 import React from 'react';
 import './MyPortfolio.css';
+import { Link } from 'react-router-dom';
 
 const portfolioStyle = {
     padding: '20px',
@@ -46,6 +47,11 @@ function MyPortfolio() {
                     </li>
                 ))}
             </ul>
+
+            <nav>
+                <Link to="/">Go to About Me</Link> |
+                <Link to="/contact">Go to Contact</Link>
+            </nav>
         </section>
     );
 }
