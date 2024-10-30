@@ -1,26 +1,88 @@
-// src/components/Header.js
-import React from 'react';
+import React, { useState } from 'react';
+import { AppstoreOutlined, DownOutlined, SettingOutlined } from '@ant-design/icons';
+import { Menu } from 'antd';
+import './Header.css'; // Ensure your styles are included
+import logo from './../assets/logo.png';
 
-const headerStyle = {
-    textAlign: 'center',
-    padding: '20px',
-    backgroundColor: '#282c34',
-    color: 'white'
-};
+const items = [
+    {
+        key: 'Home',
+        label: 'Home',
+    },
 
-const logoStyle = {
-    height: '40px',
-    margin: '0 10px'
-};
+    {
+        key: 'about', // News menu with children
+        label: (<span>About <DownOutlined style={{ fontSize: '10px' }}/></span>), // Dropdown indicator for News
+        children: [
+            {
+                label: 'Local News',
+                key: 'local_news',
+            },
+            {
+                label: 'International News',
+                key: 'international_news',
+            },
+        ],
+    },
+    {
+        key: 'contact', // About menu with children
+        label: (<span>Contact <DownOutlined style={{ fontSize: '10px' }}/></span>),
+        children: [
+            {
+                label: 'Company Info',
+                key: 'company_info',
+            },
+            {
+                label: 'Contact Us',
+                key: 'contact_us',
+            },
+        ],
+    },
+    {
+        key: 'projects', // About menu with children
+        label: (<span>Projects <DownOutlined style={{ fontSize: '10px' }}/></span>),
+        children: [
+            {
+                label: 'Company Info',
+                key: 'company_info',
+            },
+            {
+                label: 'Contact Us',
+                key: 'contact_us',
+            },
+        ],
+    },
+]
 
-function Header() {
+const Header = () => {
+    const [current, setCurrent] = useState('ex_rate');
+
+    const onClick = (e) => {
+        console.log('click ', e);
+        setCurrent(e.key);
+    };
+
     return (
-        <header style={headerStyle}>
-            <img src="/vite.svg" style={logoStyle} alt="Vite logo" />
-            <img src="/react.svg" style={logoStyle} alt="React logo" />
-            <p>I am a Software Engineer</p>
+        <header className="header">
+            <div className="logo-container">
+                <img style={{width:'40px'}} src={logo} alt="Logo" />
+            </div>
+            <Menu
+                onClick={onClick}
+                selectedKeys={[current]}
+                mode="horizontal"
+                items={items.map(item => ({
+                    ...item,
+                    icon: item.icon || null,
+                    children: item.children ? item.children.map(child => ({
+                        ...child,
+                        key: child.key,
+                    })) : null,
+                }))}
+                className="header-menu"
+            />
         </header>
     );
-}
+};
 
 export default Header;

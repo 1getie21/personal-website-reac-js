@@ -1,0 +1,16 @@
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.profile-info {
+    text-align: left;
+    margin-right: 20px;
+}
+
+.profile-picture img {
+    width: 150px; /* Adjust the size of the profile picture */
+    border-radius: 50%; /* Circular profile picture */
+}

@@ -1,21 +1,21 @@
 import React from 'react';
 import './MyPortfolio.css';
-import { Link } from 'react-router-dom';
+import Profile from './Profile'; // Import the Profile component
 
 const portfolioStyle = {
     padding: '20px',
     textAlign: 'center'
 };
+
 const projectList = [
     {
-        title: "java-spring-boot-backend",
+        title: "Networ-Traffic-Managment java-spring-boot",
         description: "A brief description of Project One.",
         link: "https://github.com/1getie21/java-spring-boot-backend"
     },
-
     {
         title: "Personal Website Screenshot",
-        description: " screenshot of my personal website. This provides a glimpse of my web design and development skills.",
+        description: "A screenshot of my personal website. This provides a glimpse of my web design and development skills.",
         link: "/assets/screenshots/website-screenshot.png",
         type: "image"
     },
@@ -23,13 +23,14 @@ const projectList = [
         title: "My CV",
         description: "Download my CV for a detailed overview of my professional background and qualifications.",
         link: "/assets/documents/cv.pdf",
-        type: "document" // Specify that this is a document
+        type: "document"
     }
 ];
 
 function MyPortfolio() {
     return (
         <section style={portfolioStyle}>
+            <Profile /> {/* Add Profile component here */}
             <h2>Portfolio</h2>
             <p>Here you can showcase some of the projects I've worked on.</p>
             <ul className="portfolio-list">
@@ -47,12 +48,8 @@ function MyPortfolio() {
                     </li>
                 ))}
             </ul>
-
-            <nav>
-                <Link to="/">Go to About Me</Link> |
-                <Link to="/contact">Go to Contact</Link>
-            </nav>
         </section>
     );
 }
+
 export default MyPortfolio;
